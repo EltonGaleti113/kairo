@@ -14,3 +14,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//User 
+model User {
+  id      Int      @id @default(autoincrement())
+  name    String
+  wallets Wallet[]
+}
+
+//Wallet
+model Wallet {
+  id      Int     @id @default(autoincrement())
+  userId  Int
+  user    User    @relation(fields: [userId], references: [id])
+  balance Decimal @default(0)
+}
+
+model FutureTransaction {
+  id Int @id @default(autoincrement())
+  transaction Decimal
+}
