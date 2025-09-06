@@ -21,7 +21,7 @@ import { WalletController } from './controllers/wallet/wallet.controller';
         password: config.get<string>('POSTGRES_PASSWORD'),
         database: config.get<string>('POSTGRES_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: config.get<boolean>('DB_SYNC', true), // true só dev
+        synchronize: config.get<boolean>('DB_SYNC', true),
       }),
     }),
   ],
